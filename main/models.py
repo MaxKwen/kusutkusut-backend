@@ -18,9 +18,9 @@ class Tweet(models.Model):
         on_delete=models.CASCADE, 
         null=True, 
         blank=True,
-        related_name='comments'  # <-- This is the magic part!
+        related_name='comments'
     )
-    
+
     content = models.TextField(max_length=280)
     likes = models.IntegerField(default=0)
     retweets = models.IntegerField(default=0)

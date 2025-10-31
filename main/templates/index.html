@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ name }}</title>
+</head>
+<body>
+    {% if tweets %}
+        {% for tweet in tweets %}
+            {{ tweet.content }}
+        <br/>
+        {% endfor %}
+    {% endif %}
+</body>
+
+</html>

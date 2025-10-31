@@ -13,7 +13,15 @@ class Person(models.Model):
     profile_picture = models.ImageField(upload_to='profile_pics/', null=True, blank=True)
 
 class Tweet(models.Model):
-    comments = models.CharField(max_length=280)
+    parent_tweet = models.ForeignKey(
+        'self', 
+        on_delete=models.CASCADE, 
+        null=True, 
+        blank=True,
+        related_name='comments'  # <-- This is the magic part!
+    )
+    
+    content = models.TextField(max_length=280)
     likes = models.IntegerField(default=0)
     retweets = models.IntegerField(default=0)
     published_date = models.DateTimeField(default=timezone.now)

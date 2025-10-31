@@ -117,6 +117,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# Media files (user uploaded files)
+# During development Django can serve media files when DEBUG=True and
+# `static()` is added to the project's urls.py (see kusutkusut/urls.py).
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 

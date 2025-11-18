@@ -2,24 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ name }}</title>
+    <title>kusutkusut corp.</title>
 </head>
 <body>
     {% if persons %}
         {% for person in persons %}
             <section style="margin-bottom: 1.5rem; display:flex; gap:1rem; align-items:flex-start;">
                 {% if person.profile_picture %}
-                    <img src="{{ person.profile_picture.url }}" alt="{{ person.name }}'s profile picture" style="width:80px; height:80px; object-fit:cover; border-radius:50%;"/>
-                    <div style="font-size:0.8rem; color:#666; margin-top:0.25rem;">
-                        <a href="{{ person.profile_picture.url }}" target="_blank">{{ person.profile_picture.url }}</a>
-                    </div>
+                    <img src="{{ person.profile_picture.url }}" alt="{{ person.name }}" style="width:80px;height:80px;object-fit:cover;border-radius:50%;">
                 {% else %}
-                    <div style="width:80px; height:80px; background:#eee; border-radius:50%; display:inline-block;
-                                display:flex; align-items:center; justify-content:center; color:#888;">
-                        <span style="font-size:0.9rem;">No<br/>Image</span>
-                    </div>
+                    <!-- placeholder / initials -->
+                    <div class="avatar-placeholder">DL</div>
                 {% endif %}
-
                 <div>
                     <h2 style="margin:0;">{{ person.name }} {% if person.username %}<small>(@{{ person.username }})</small>{% endif %}</h2>
                     {% if person.bio %}<p style="margin:0.25rem 0 0 0;">{{ person.bio }}</p>{% endif %}
@@ -65,5 +59,4 @@
         <p>No users found.</p>
     {% endif %}
 </body>
-
 </html>

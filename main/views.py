@@ -1,8 +1,12 @@
+from django.http import JsonResponse
 from django.shortcuts import render
 from django.db.models import Prefetch
 from .models import Person, Tweet
 
 nama_mhs = "depelemon"
+
+def hello(request):
+    return JsonResponse({"message": "Hello, World!", "name": nama_mhs})
 
 def index(request):
     # Prefetch only parent tweets (parent_tweet is NULL) and their replies (comments)

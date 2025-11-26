@@ -23,8 +23,5 @@ class Tweet(models.Model):
 
     content = models.TextField(max_length=280)
     likes = models.IntegerField(default=0)
-    retweets = models.IntegerField(default=0)
     published_date = models.DateTimeField(default=timezone.now)
-    views = models.IntegerField(default=0)
     author = models.ForeignKey(Person, on_delete = models.CASCADE)
-    image = models.ImageField(upload_to='tweet_images/', null=True, blank=True)
